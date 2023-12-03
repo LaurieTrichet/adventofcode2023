@@ -9,7 +9,6 @@ export async function reduceTransformLinesFromInputFile(inputFilePath: string,
     for await (const line of file.readLines()) {
         result.push(transform(line));
     }
-    console.log(result);
-
+    // console.log(result);
     return result.reduce(reduceFunction);
 }

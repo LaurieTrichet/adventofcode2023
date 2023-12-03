@@ -1,4 +1,5 @@
 import { combineFirstAndLastDigit, } from "../src/combineFirstAndLastDigit";
+
 import { accumulativeAddition } from "../src/mathHelpers";
 
 test('combineFirstAndLastDigit ', () => {
