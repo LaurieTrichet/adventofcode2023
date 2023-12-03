@@ -2,7 +2,7 @@
   "name": "adventofcode2023",
   "packageManager": "yarn@4.0.2",
   "scripts": {
-    "build": "yarn run ts-node src/greetings.ts",
+    "day1": "yarn run ts-node src/day1-1.ts",
     "test": "jest"
   },
   "devDependencies": {
