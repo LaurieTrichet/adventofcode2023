@@ -1,5 +1,5 @@
-import { combineFirstAndLastSpelledDigit } from "../src/combineFirstAndLastSpelledDigit";
-import { accumulativeAddition } from "../src/mathHelpers";
+import { combineFirstAndLastSpelledDigit } from "../../src/day1/combineFirstAndLastSpelledDigit";
+import { accumulativeAddition } from "../../src/day1/mathHelpers";
 
 
 test("combine spelled digits", () => {

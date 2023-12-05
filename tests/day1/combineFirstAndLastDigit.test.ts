@@ -1,6 +1,6 @@
-import { combineFirstAndLastDigit, } from "../src/combineFirstAndLastDigit";
+import { combineFirstAndLastDigit, } from "../../src/day1/combineFirstAndLastDigit";
 
-import { accumulativeAddition } from "../src/mathHelpers";
+import { accumulativeAddition } from "../../src/day1/mathHelpers";
 
 test('combineFirstAndLastDigit ', () => {
     expect(combineFirstAndLastDigit("1abc2")).toBe(12);

@@ -1,5 +1,5 @@
 
-import { parseDigits } from "../src/findAllTypeOfDigits";
+import { parseDigits } from "../../src/day1/findAllTypeOfDigits";
 
 test("parse all digits", () => {
     expect(parseDigits("two1nine")).toStrictEqual([2, 1, 9]);

@@ -1,4 +1,3 @@
-import { combineFirstAndLastDigit } from "./combineFirstAndLastDigit";
 import { combineFirstAndLastSpelledDigit } from "./combineFirstAndLastSpelledDigit";
 import { reduceTransformLinesFromInputFile } from "./getLinesFromFile";
 import { accumulativeAddition } from "./mathHelpers";
