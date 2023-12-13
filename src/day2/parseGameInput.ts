@@ -17,12 +17,15 @@ const colorToRegexMap = new Map([
 ]);
 
 export function sumOfIndexOfValidGamesForGamePool(inputs: string[], pool: GamePool) {
-    return inputs.map(input => parseGame(input, pool)).reduce(accumulativeAddition);
+    return inputs.map(input => getGameIndexNumberForPossibleGames(input, pool)).reduce(accumulativeAddition);
 }
 
-export function parseGame(input: string, pool: GamePool) {
+export function sumOfCubePowerForMinimumAmountOfCubesRequired(inputs: string[]) {
+    return inputs.map(input => getCubePowerForMinimumAmountOfCubesRequired(input)).reduce(accumulativeAddition);
+}
+
+export function getGameIndexNumberForPossibleGames(input: string, pool: GamePool) {
     const gameIndex = parseGameIndex(input) ?? 0;
-    console.log("--- game " + gameIndex);
     let possibleGame = true;
     const sets = input.split(";");
     sets.forEach(set => {
@@ -36,6 +39,15 @@ export function parseGame(input: string, pool: GamePool) {
     });
 
     return possibleGame ? gameIndex : 0;
+}
+
+export function getCubePowerForMinimumAmountOfCubesRequired(input: string) {
+    const gameIndex = parseGameIndex(input) ?? 0;
+    const result: number[] = [];
+    for (const [colour, regex] of colorToRegexMap) {
+        result.push(maxCubes(regex, input));
+    }
+    return result.reduce((previousValue: number, currentValue: number) => previousValue * currentValue);
 }
 
 export function parseGameIndex(input: string) {
@@ -57,11 +69,19 @@ export function totalCubes(regex: RegExp, input: string) {
     while ((arrayRegResult = regex.exec(input)) !== null) {
         const cubeDescription = arrayRegResult[0];
         const index = parseRegexNumber(cubeDescription) ?? 0;
-        console.log("totalCubes", cubeDescription, index);
-
         result += index;
     }
-    console.log("totalCubes result ", result);
+    return result;
+}
+
+export function maxCubes(regex: RegExp, input: string) {
+    let result = 0;
+    let arrayRegResult;
+    while ((arrayRegResult = regex.exec(input)) !== null) {
+        const cubeDescription = arrayRegResult[0];
+        const index = parseRegexNumber(cubeDescription) ?? 0;
+        result = Math.max(result, index);
+    }
     return result;
 }
 
