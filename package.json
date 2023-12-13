@@ -3,6 +3,7 @@
   "packageManager": "yarn@4.0.2",
   "scripts": {
     "day1": "yarn run ts-node src/day1/main.ts",
+    "day2": "yarn run ts-node src/day2/main.ts",
     "test": "jest"
   },
   "devDependencies": {

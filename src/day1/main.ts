@@ -1,6 +1,6 @@
 import { combineFirstAndLastSpelledDigit } from "./combineFirstAndLastSpelledDigit";
-import { reduceTransformLinesFromInputFile } from "./getLinesFromFile";
-import { accumulativeAddition } from "./mathHelpers";
+import { reduceTransformLinesFromInputFile } from "../utils/getLinesFromFile";
+import { accumulativeAddition } from "../utils/mathHelpers";
 
 async function execute() {
     // const test = await reduceTransformLinesFromInputFile("./assets/input-test.txt", combineFirstAndLastDigit, accumulativeAddition);

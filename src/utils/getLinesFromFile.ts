@@ -1,5 +1,6 @@
 import { open } from "node:fs/promises";
 import path from "node:path";
+
 export async function reduceTransformLinesFromInputFile(inputFilePath: string,
     transform: (input: string) => (number | undefined),
     reduceFunction: (previousValue: number | undefined, currentValue: number | undefined, currentIndex: number, array: (number | undefined)[]) => number | undefined) {
@@ -11,4 +12,15 @@ export async function reduceTransformLinesFromInputFile(inputFilePath: string,
     }
     // console.log(result);
     return result.reduce(reduceFunction);
+}
+
+
+export async function getAllLinesFromFile(inputFilePath: string) {
+    const filePath = path.join(path.resolve("."), inputFilePath);
+    const file = await open(filePath);
+    const result: string[] = [];
+    for await (const line of file.readLines()) {
+        result.push(line);
+    }
+    return result;
 }
